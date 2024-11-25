@@ -522,6 +522,6 @@ document.getElementById("contactNavBtn").addEventListener("click", () => {
     showOnlySection(contactPage);
 });
 
-document.getElementById("conta").addEventListener("click", () => {
-    showOnlySection(contactPage);
+document.getElementById("feedbtn").addEventListener("click", () => {
+    showOnlySection(feedPage);
 });
