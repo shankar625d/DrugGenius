@@ -9,6 +9,7 @@ const registerNavBtn = document.getElementById('registerNavBtn');
 const homepage = document.getElementById("homepage");
 const result = document.getElementById("result");
 const contactpage = document.getElementById("contact-page");
+const feedbtn =  documet.getElementById("ripple");
 
 // Function to show only one section and handle navigation state
 function showPage(page) {
@@ -518,5 +519,9 @@ let rfTrainingInitiated = false;
 
 // Add event listener for the Contact button
 document.getElementById("contactNavBtn").addEventListener("click", () => {
+    showOnlySection(contactPage);
+});
+
+document.getElementById("conta").addEventListener("click", () => {
     showOnlySection(contactPage);
 });

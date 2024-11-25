@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('index.php')
+    return render_template('index.html')
 
 @app.route('/train_rf_model', methods=['POST'])
 def train_rf_model():
