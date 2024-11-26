@@ -9,7 +9,6 @@ const registerNavBtn = document.getElementById('registerNavBtn');
 const homepage = document.getElementById("homepage");
 const result = document.getElementById("result");
 const contactpage = document.getElementById("contact-page");
-const feedbtn =  documet.getElementById("ripple");
 
 // Function to show only one section and handle navigation state
 function showPage(page) {
@@ -23,8 +22,6 @@ function showPage(page) {
         document.getElementById(btnId)?.classList.remove('active');
     });
     
-
-
     // Show selected page and set active state
     switch(page) {
         case 'home':
@@ -158,10 +155,6 @@ const drugRecommendations = {
     cold_intolerance: ['Levothyroxine (if hypothyroid)', 'Wear warmer clothing']
 };
 
-
-
-
-
 const diseaseMappings = {
     thyroid: ['fatigue', 'weight_gain', 'cold_intolerance'],
     heart_disease: ['shortness_of_breath', 'chest_pain', 'high_blood_pressure'],
@@ -186,8 +179,6 @@ function identifyDisease(symptoms) {
     }
     return identifiedDiseases.length > 0 ? identifiedDiseases : ['No specific disease identified'];
 }
-
-
 
 // Handle form submission
 symptomForm.addEventListener('submit', (e) => {
@@ -431,30 +422,6 @@ function showOnlySection(section) {
     section.classList.remove("hidden");
 }
 
-
-
-
-// document.getElementById("trainModelBtn").addEventListener("click", () => {
-//             // Display a loading message
-//             const messageDiv = document.getElementById("trainModelMessage");
-//             messageDiv.textContent = "Training the model, please wait...";
-
-//             // Send POST request to the Flask backend
-//             fetch("http://127.0.0.1:8884/train_model", {
-//                 method: "POST"
-//             })
-//             .then(response => response.json())
-//             .then(data => {
-//                 // Display success message
-//                 messageDiv.textContent = data.message;
-//             })
-//             .catch(error => {
-//                 console.error("Error training model:", error);
-//                 messageDiv.textContent = "An error occurred while training the model.";
-//             });
-//         });
-
-
 let rfTrainingInitiated = false;
         let dtTrainingInitiated = false;
         
@@ -522,6 +489,3 @@ document.getElementById("contactNavBtn").addEventListener("click", () => {
     showOnlySection(contactPage);
 });
 
-document.getElementById("feedbtn").addEventListener("click", () => {
-    showOnlySection(feedPage);
-});
