@@ -489,3 +489,12 @@ document.getElementById("contactNavBtn").addEventListener("click", () => {
     showOnlySection(contactPage);
 });
 
+function showLoginForm() {
+    document.getElementById('loginFormContainer').style.display = 'block';
+    document.getElementById('registerFormContainer').style.display = 'none';
+}
+
+function showRegisterForm() {
+    document.getElementById('loginFormContainer').style.display = 'none';
+    document.getElementById('registerFormContainer').style.display = 'block';
+}

@@ -107,12 +107,18 @@
             </form>
         </div>
     </section>
+
+    <!-- Toggle Buttons -->
+    <div class="toggle-buttons">
+        <button id="showLogin" onclick="showLoginForm()">Login</button>
+        <button id="showRegister" onclick="showRegisterForm()">Register</button>
+    </div>
     
     <!-- Login Page -->
     <div id="login-page" class="auth-container animate__animated animate__fadeIn">
         <div class="auth-box">
             <h2>Welcome Back</h2>
-            <form action="login.php" method="POST" id="loginForm" class="auth-form" >
+            <form  method="POST" action="/login" id="loginForm" class="auth-form" >
 
                 <div class="form-group">
                     <input type="text" id="loginUsername" name="username" required>
@@ -135,7 +141,7 @@
     <div id="register-page" class="auth-container animate__animated animate__fadeIn hidden">
         <div class="auth-box">
             <h2>Create Account</h2>
-            <form  action="register.php" method="POST" id="registerForm" class="auth-form">
+            <form  method="POST" action="/register" id="registerForm" class="auth-form">
 
                 <div class="form-group">
                     <input type="text" id="registerUsername" name="username" required>
