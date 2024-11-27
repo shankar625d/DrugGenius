@@ -14,8 +14,11 @@ const contactpage = document.getElementById("contact-page");
 function showPage(page) {
     // Hide all sections first
     const allSections = [homepage, loginPage, registerPage, recommendationPage, result, contactpage];
-    allSections.forEach(section => section.classList.add('hidden'));
-    
+    allSections.forEach(section => {
+        section.classList.add('hidden');
+        section.style.display = ''; // Reset the display property
+    });
+
     // Remove active class from all nav buttons
     const allNavButtons = ['homeNavBtn', 'loginNavBtn', 'registerNavBtn', 'contactNavBtn'];
     allNavButtons.forEach(btnId => {
@@ -30,10 +33,12 @@ function showPage(page) {
             break;
         case 'login':
             loginPage.classList.remove('hidden');
+            loginPage.style.display = 'block'; //ensure login page is visible
             loginNavBtn.classList.add('active');
             break;
         case 'register':
             registerPage.classList.remove('hidden');
+            registerPage.style.display = 'block';
             registerNavBtn.classList.add('active');
             break;
         case 'recommendation':
@@ -58,12 +63,7 @@ Object.entries(navigationHandlers).forEach(([btnId, page]) => {
     document.getElementById(btnId)?.addEventListener('click', () => showPage(page));
 });
 
-// Form-related event listeners
-loginForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    // Add your login authentication logic here
-    showPage('recommendation');
-});
+
 
 registerForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -498,3 +498,60 @@ function showRegisterForm() {
     document.getElementById('loginFormContainer').style.display = 'none';
     document.getElementById('registerFormContainer').style.display = 'block';
 }
+
+const loginError = document.getElementById('loginError');
+const registerError = document.getElementById('registerError');
+
+document.getElementById('registerForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const username = document.getElementById('registerUsername').value;
+    const email = document.getElementById('registerEmail').value;
+    const password = document.getElementById('registerPassword').value;
+
+    const response = await fetch('/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, email, password })
+    });
+
+    
+    if (response.ok) {
+        alert('Registration successful! Please login.');
+        registerPage.classList.add('hidden');
+        loginPage.classList.remove('hidden');
+        showPage('login');
+    }
+});
+
+document.getElementById('loginForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+
+    const response = await fetch('/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+    });
+
+    if (response.ok) {
+        loginPage.style.display = 'none';
+        recommendationPage.style.display = 'block';
+        showPage('recommendation');
+    } else {
+        loginError.style.display = 'block';
+    } 
+});
+
+document.getElementById('logoutBtn').addEventListener('click', function () {
+    // Redirect to the login page
+    showPage('login');
+
+    // Clear user-specific data (optional)
+    // Example: localStorage.clear(); or sessionStorage.clear();
+
+    alert('You have been logged out.');
+});
+
+
+

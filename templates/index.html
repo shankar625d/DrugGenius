@@ -110,19 +110,21 @@
 
     
     <!-- Login Page -->
+<center>
     <div id="login-page" class="auth-container animate__animated animate__fadeIn">
         <div class="auth-box">
             <h2>Welcome Back</h2>
-            <form  method="POST" action="/login" id="loginForm" class="auth-form" >
+            <form id="loginForm" class="auth-form" >
 
                 <div class="form-group">
-                    <input type="text" id="loginUsername" name="username" required>
-                    <label>Username</label>
+                    <input type="email" id="loginEmail" name="email" required>
+                    <label>Email</label>
                 </div>
                 <div class="form-group">
                     <input type="password" id="loginPassword" name="password" required>
                     <label>Password</label>
                 </div>
+                <p id="loginError" class="error" style="display: none; color: red; font-weight: bold;">Invalid email or password.</p>
                 <button type="submit" class="submit-btn">
                     <span>Login</span>
                     <div class="ripple"></div>
@@ -131,12 +133,14 @@
             </form>
         </div>
     </div>
+</center>
 
     <!-- Registration Page -->
+<center>
     <div id="register-page" class="auth-container animate__animated animate__fadeIn hidden">
         <div class="auth-box">
             <h2>Create Account</h2>
-            <form  method="POST" action="/register" id="registerForm" class="auth-form">
+            <form id="registerForm" class="auth-form">
 
                 <div class="form-group">
                     <input type="text" id="registerUsername" name="username" required>
@@ -150,10 +154,7 @@
                     <input type="password" id="registerPassword" name="password" required>
                     <label>Password</label>
                 </div>
-                <div class="form-group">
-                    <input type="password" id="confirmPassword" name="confirmPassword" required>
-                    <label>Confirm Password</label>
-                </div>
+                <p id="registerError" class="error" style="display: none; color: red;font-weight: bold;">Error during registration. Try again.</p>
                 <button type="submit" class="submit-btn">
                     <span>Register</span>
                     <div class="ripple"></div>
@@ -162,9 +163,14 @@
             </form>
         </div>
     </div>
+</center>
 
     <!-- Drug Recommendation Form -->
+     
     <div id="recommendation-page" class="container animate__animated animate__fadeIn hidden">
+        <div class="logout-container">
+            <button id="logoutBtn" class="logout-btn">Logout</button>
+        </div>
         <h1 class="heading">Drug Recommendation System</h1> <!-- Custom heading class added -->
         <form id="symptomForm">
             <!-- Common Symptoms Section -->
@@ -418,6 +424,11 @@
             <input type="checkbox" name="cold_intolerance">
             <span class="checkmark"></span>
             Cold Intolerance
+        </label>
+        <label class="animate__animated animate__fadeInUp">
+            <input type="checkbox" name="weight_gain">
+            <span class="checkmark"></span>
+            Weight Gain
         </label>
     </div>
 </div>
