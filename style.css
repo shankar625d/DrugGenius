@@ -1346,7 +1346,7 @@ html {
 
         
 #homepage {
-    background-image: url("/static/images/back.jpg");
+    background-image: url("back.jpg");
     background-size: cover;           /* Scale the image to cover the entire screen */
     background-repeat: no-repeat;      /* Prevent the image from repeating */
     background-attachment: fixed;      /* Keep the background fixed during scrolling */
@@ -1354,7 +1354,7 @@ html {
 }
 
 #login-page{
-    background-image: url("/static/images/log.jpg");
+    background-image: url("log.jpg");
     background-size: cover;           /* Scale the image to cover the entire screen */
     background-repeat: no-repeat;      /* Prevent the image from repeating */
     background-attachment: fixed;      /* Keep the background fixed during scrolling */
@@ -1362,7 +1362,7 @@ html {
 }
 
 #register-page{
-    background-image: url('/static/images/reg.webp');
+    background-image: url('reg.webp');
     background-size: cover;           /* Scale the image to cover the entire screen */
     background-repeat: no-repeat;      /* Prevent the image from repeating */
     background-attachment: fixed;      /* Keep the background fixed during scrolling */
@@ -1370,7 +1370,7 @@ html {
 }
 
 #contact-page{
-    background-image: url('/static/images/cont.jpg');
+    background-image: url('cont.jpg');
     background-size: cover;           /* Scale the image to cover the entire screen */
     background-repeat: no-repeat;      /* Prevent the image from repeating */
     background-attachment: fixed;      /* Keep the background fixed during scrolling */
@@ -1378,7 +1378,7 @@ html {
 }
 
 #recommendation-page{
-    background-image: url('/static/images/drug.jpeg');
+    background-image: url('drug.jpeg');
     background-size: cover;           /* Scale the image to cover the entire screen */
     background-repeat: no-repeat;      /* Prevent the image from repeating */
     background-attachment: fixed;      /* Keep the background fixed during scrolling */
