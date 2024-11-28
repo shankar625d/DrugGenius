@@ -13,7 +13,12 @@
     
     <!-- Navigation -->
     <nav class="nav-bar">
-        <div class="logo animate__animated animate__fadeIn"><h1>DrugGenius</h1></div>
+        <div class="logo animate__animated animate__fadeIn"><h2>DrugGenius</h2></div>
+
+        <!-- Hamburger Menu for Mobile -->
+    <div class="hamburger-menu" id="hamburgerMenu">
+        <i class="fas fa-bars"></i>
+    </div>
         <div class="nav-links">
             <button id="homeNavBtn" class="nav-btn">Home</button>
             <button id="loginNavBtn" class="nav-btn">Login</button>
@@ -28,15 +33,15 @@
             <h1 class="animate__animated animate__fadeInDown">Welcome to <span class="highlight">DrugGenius</span></h1>
             <p class="description animate__animated animate__fadeIn">DrugGenius is an intelligent platform that provides personalized drug recommendations using advanced data-driven techniques.</p>
             
-            <h2 class="animate__animated animate__fadeInUp">About the <span class="highlight">Decision Tree Algorithm</span></h2>
+            <h1 class="animate__animated animate__fadeInUp">About the <span class="highlight">Decision Tree Algorithm</span></h1>
             <p class="info animate__animated animate__fadeIn">The Decision Tree Algorithm splits data into branches, representing possible decision paths. It helps us identify the most likely illness and suggest suitable medications. This method ensures accurate, efficient recommendations tailored to individual needs.</p>
     
             <a href="https://www.geeksforgeeks.org/decision-tree-algorithms/"><button id="decisionTreeBtn" class="submit-btn">Learn More</button></a>
 
-            <h2 class="animate__animated animate__fadeInUp">How Our Drug Detection System Works</h2>
+            <h1 class="animate__animated animate__fadeInUp">How Our Drug Detection System Works</h1>
             <p class="info animate__animated animate__fadeIn">Our system cross-references patient symptoms with a vast database of medications and medical conditions. It takes into account potential allergies, chronic conditions, and other patient-specific factors to suggest safe and effective drugs.</p>
             
-            <h3 class="highlight animate__animated animate__fadeInUp">Why Choose DrugGenius?</h3>
+            <h1 class="highlight animate__animated animate__fadeInUp">Why Choose DrugGenius?</h1>
             <ul class="benefits-list animate__animated animate__fadeIn">
                 <li>Accurate, data-driven recommendations based on symptoms and conditions.</li>
                 <li>Personalized suggestions, including allergy and chronic condition considerations.</li>
@@ -46,7 +51,7 @@
 
             <h1>Train Your AI Models</h1>
     
-            <h2>Random Forest Classifier</h2>
+            <h3>Random Forest Classifier</h3>
             <form>
                 <button id="train-rf-btn" class="submit-btn">Train AI Model 1</button>
                 <div id="trainModelMessage" style="margin-top: 20px; color: green;"></div>
@@ -55,7 +60,7 @@
     
             <br><br>
     
-            <h2>Decision Tree Classifier</h2>
+            <h3>Decision Tree Classifier</h3>
             <form>
                 <button id="train-dt-btn" class="submit-btn">Train AI Model 2</button>
                 <div id="trainModelMessage" style="margin-top: 20px; color: green;"></div>

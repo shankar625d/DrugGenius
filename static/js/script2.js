@@ -554,4 +554,28 @@ document.getElementById('logoutBtn').addEventListener('click', function () {
 });
 
 
+// JavaScript for navbar toggle
+const hamburgerMenu = document.getElementById("hamburgerMenu");
+const navLinks = document.querySelector(".nav-links");
+
+hamburgerMenu.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     const hamburgerMenu = document.querySelector('.hamburger-menu');
+//     const navLinks = document.querySelector('.nav-links');
+
+//     // Toggle menu on click
+//     hamburgerMenu.addEventListener('click', () => {
+//         navLinks.classList.toggle('active');
+//     });
+
+//     // Close menu on scroll
+//     window.addEventListener('scroll', () => {
+//         if (navLinks.classList.contains('active')) {
+//             navLinks.classList.remove('active');
+//         }
+//     });
+// });
 

@@ -428,6 +428,12 @@ label:hover {
 /* Navigation bar animation */
 .nav-bar {
     animation: slideDown 0.8s ease-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
 }
 
 @keyframes slideDown {
@@ -448,6 +454,9 @@ label:hover {
     transition: color 0.3s ease, transform 0.2s ease;
     overflow: hidden;
     font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 .nav-btn::after {
@@ -960,6 +969,128 @@ body {
     gap: 1rem;
 }
 
+/* Hide the hamburger menu on larger screens */
+.hamburger-menu {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+/* Style for the hamburger menu icon */
+.hamburger-menu {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333; /* Dark color for white background */
+    padding: 10px;
+    border: 2px solid #333; /* Add a border for better visibility */
+    border-radius: 5px; /* Optional: Rounded corners */
+    background-color: white; /* Match the background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for more definition */
+}
+
+.hamburger-menu i {
+    margin-right: 10px;
+}
+
+/* Adjust hover and active states */
+.hamburger-menu:hover {
+    background-color: #f0f0f0; /* Slightly darker background on hover */
+    color: #111; /* Slightly darker text color on hover */
+}
+
+/* Responsive style for mobile */
+@media screen and (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
+    
+    .nav-links {
+        display: none; /* Hide links by default */
+        flex-direction: column;
+        background-color: #f9f9f9; /* Light background for dropdown */
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%; /* Full width dropdown */
+        z-index: 1000;
+        border-top: 2px solid #ccc; /* Optional: Separate dropdown visually */
+    }
+
+    .nav-links.active {
+        display: flex; /* Show links when toggled */
+    }
+
+    .nav-links .nav-btn {
+        padding: 10px 20px;
+        text-align: left;
+        color: #333; /* Match the hamburger menu color */
+    }
+
+    .nav-links .nav-btn:hover {
+        background-color: #f0f0f0; /* Slight hover effect */
+        color: #111;
+    }
+
+    .hamburger-menu.active + .nav-links {
+        display: flex;
+    }
+
+    .auth-container,
+    .auth-box,
+    .form-group,
+    .contact-form {
+        width: 100%;
+        max-width: 90%;
+        margin: auto;
+    }
+
+    .form-field {
+        flex-direction: column;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}
+
+/* Responsive for smaller devices (Mobile) */
+@media (max-width: 480px) {
+    .homepage-content h1 {
+        font-size: 1.5rem;
+    }
+    .homepage-content h3 {
+        font-size: 1rem;
+    }
+
+    .homepage-content p {
+        font-size: 1rem;
+    }
+    
+    .submit-btn{
+        width : 150px;
+    }
+    
+
+    .contact-icons i {
+        font-size: 1.5rem;
+    }
+
+    .form-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .patient-form .form-field {
+        margin-bottom: 10px;
+    }
+
+    .symptom-grid label {
+        font-size: 0.9rem;
+    }
+}
+
+
+
 .nav-btn {
     padding: 0.5rem 1rem;
     border: none;
@@ -979,6 +1110,10 @@ body {
 
 .nav-btn:hover {
     color: var(--secondary-color);
+}
+
+.nav-links {
+    transition: all 0.3s ease;
 }
 
 
@@ -1204,6 +1339,10 @@ body {
     font-weight: bold;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 
         
 #homepage {
@@ -1244,4 +1383,36 @@ body {
     background-repeat: no-repeat;      /* Prevent the image from repeating */
     background-attachment: fixed;      /* Keep the background fixed during scrolling */
     background-position: center;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+    .auth-box {
+        width: 80%;
+        padding: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .submit-btn {
+        font-size: 0.9rem;
+    }
+
+    .form-group input {
+        padding: 0.6rem;
+    }
+
+    .form-group label {
+        font-size: 0.75rem;
+    }
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
 }
