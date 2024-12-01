@@ -1,3 +1,8 @@
+# Mini-Project
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
 # DrugGenius
  DrugGenius is an intelligent platform that provides personalized drug recommendations using advanced data-driven techniques.
 
@@ -161,5 +166,9 @@ This project is licensed under the **Apache License**. See the [LICENSE](LICENSE
 ## **Contact**
 
 For any questions, suggestions, or feedback, please contact us at **shankarpaikira225@gmail.com**.
+<a href="https://www.instagram.com/shankar_gojo_01000101/"><i class="fa-brands fa-instagram fa-xl"></i></a> 
+                    <a href="mailto:shankarpaikira225@gmail.com"><i class="fa-brands fa-google fa-xl"></i></a>
+                    <a href="https://www.facebook.com/sadhana.rani.3954"> <i class="fa-brands fa-facebook fa-xl"></i></a>
+                    <a href="https://x.com/sha54773">  <i class="fa-brands fa-square-x-twitter fa-xl"></i></a>
 
 ---
