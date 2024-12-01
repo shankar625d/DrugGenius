@@ -166,7 +166,8 @@ This project is licensed under the **Apache License**. See the [LICENSE](LICENSE
 ## **Contact**
 
 For any questions, suggestions, or feedback, please contact us at **shankarpaikira225@gmail.com**.
-<a href="https://www.instagram.com/shankar_gojo_01000101/"><i class="fa-brands fa-instagram fa-xl"></i></a> 
+ <a href="https://www.instagram.com/shankar_gojo_01000101/"> <img src="![insta](https://github.com/user-attachments/assets/51030187-a84a-4788-8cc4-dd307ebcccb1)
+"></a> 
                     <a href="mailto:shankarpaikira225@gmail.com"><i class="fa-brands fa-google fa-xl"></i></a>
                     <a href="https://www.facebook.com/sadhana.rani.3954"> <i class="fa-brands fa-facebook fa-xl"></i></a>
                     <a href="https://x.com/sha54773">  <i class="fa-brands fa-square-x-twitter fa-xl"></i></a>
