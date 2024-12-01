@@ -94,6 +94,25 @@ pip install pymysql
 pip install bcrypt
 ```
 
+You can also run requirements.txt instead of installing individually
+
+1. Basic pip install:
+```bash
+pip install -r requirements.txt
+```
+
+2. If you want to upgrade existing packages:
+```bash
+pip install --upgrade -r requirements.txt
+```
+
+3. For a specific Python environment (recommended):
+
+-Activate your virtual environment first
+```bash
+python -m pip install -r requirements.txt
+```
+---
 ### **3. Database creation**
 
 To store the login /registration information you have to create a database in phpMyAdmin
