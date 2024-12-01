@@ -2,7 +2,6 @@ gunicorn
 flask
 flask_mysqldb
 flask
-render_template
 request
 jsonify
 redirect
