@@ -2,11 +2,6 @@ gunicorn
 flask
 flask_mysqldb
 flask
-request
-jsonify
-redirect
-url_for
-session
 flash
 flask_mysqldb
 MySQL
