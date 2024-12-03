@@ -1,9 +1,6 @@
 gunicorn
 flask
 flask_mysqldb
-flask
-flash
-flask_mysqldb
 MySQL
 pymysql
 bcrypt
