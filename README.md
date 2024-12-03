@@ -79,17 +79,12 @@ pip install  flask  render_template request jsonify redirect url_for  session fl
 ```
 You can also install each and every package individually
  ```bash
+pip install gunicorn
 pip install flask
 pip install render_template
-pip install request
-pip install jsonify
-pip install redirect
-pip install url_for
-pip install session
 pip install flash
 pip install flask_mysqldb
 pip install MySQL
-pip install subprocess
 pip install pymysql
 pip install bcrypt
 ```
