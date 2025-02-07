@@ -422,66 +422,6 @@ function showOnlySection(section) {
     section.classList.remove("hidden");
 }
 
-let rfTrainingInitiated = false;
-        let dtTrainingInitiated = false;
-        
-        // Function to check the training status
-        function checkStatus(classifier) {
-            if (classifier === 'rf' && rfTrainingInitiated) {
-                fetch(`/check_training_status?classifier=rf`)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.status === 'complete') {
-                        const updateElement = document.getElementById('rf-status-update');
-                        updateElement.innerText = `Random Forest Model trained successfully `;
-                        updateElement.classList.add('success-message');
-                        // Stop checking
-                        rfTrainingInitiated = false;
-                    } else {
-                        // Continue checking every 2 seconds
-                        setTimeout(() => checkStatus('rf'), 2000);
-                    }
-                })
-                .catch(error => console.error('Error:', error));
-            } else if (classifier === 'dt' && dtTrainingInitiated) {
-                fetch(`/check_training_status?classifier=dt`)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.status === 'complete') {
-                        const updateElement = document.getElementById('dt-status-update');
-                        updateElement.innerText = `Decision Tree Model trained successfully `;
-                        updateElement.classList.add('success-message');
-                        // Stop checking
-                        dtTrainingInitiated = false;
-                    } else {
-                        // Continue checking every 2 seconds
-                        setTimeout(() => checkStatus('dt'), 2000);
-                    }
-                })
-                .catch(error => console.error('Error:', error));
-            }
-        }
-
-        // Listen for the train button clicks to initiate the checking process
-        document.getElementById('train-rf-btn').addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default form submission
-            rfTrainingInitiated = true;
-            fetch('/train_rf_model', {method: 'POST'}) // Initiate Random Forest training
-            .then(() => {
-                checkStatus('rf'); // Start checking the status
-            })
-            .catch(error => console.error('Error initiating training:', error));
-        });
-
-        document.getElementById('train-dt-btn').addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default form submission
-            dtTrainingInitiated = true;
-            fetch('/train_dt_model', {method: 'POST'}) // Initiate Decision Tree training
-            .then(() => {
-                checkStatus('dt'); // Start checking the status
-            })
-            .catch(error => console.error('Error initiating training:', error));
-        });
 
 
 // Add event listener for the Contact button
