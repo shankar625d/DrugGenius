@@ -39,6 +39,7 @@ def register():
     except Exception as e:
         db.rollback()
         return jsonify({"message": "Registration failed"}), 500
+    
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -61,40 +62,6 @@ def login():
         return jsonify({"message": "Invalid credentials"}), 401
 
 
-
-@app.route('/train_rf_model', methods=['POST'])
-def train_rf_model():
-    try:
-        subprocess.run(['python', 'train_model.py', 'rf'])
-        return 'Random Forest Model Training Initiated Successfully!'
-    except Exception as e:
-        return str(e), 500
-
-@app.route('/train_dt_model', methods=['POST'])
-def train_dt_model():
-    try:
-        subprocess.run(['python', 'train_model.py', 'dt'])
-        return 'Decision Tree Model Training Initiated Successfully!'
-    except Exception as e:
-        return str(e), 500
-
-@app.route('/check_training_status', methods=['GET'])
-def check_training_status():
-    classifier = request.args.get('classifier')
-    if classifier == 'rf':
-        filename = 'rf_accuracy.txt'
-    elif classifier == 'dt':
-        filename = 'dt_accuracy.txt'
-    else:
-        return jsonify({'status': 'invalid_classifier'})
-    
-    if os.path.exists(filename):
-        with open(filename, 'r') as f:
-            accuracy = f.read()
-        os.remove(filename)
-        return jsonify({'status': 'complete', 'accuracy': accuracy})
-    else:
-        return jsonify({'status': 'in_progress'})
 
 
 
