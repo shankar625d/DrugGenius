@@ -21,6 +21,7 @@ cursor = db.cursor()
 def index():
     return render_template('index.html')
 
+
 @app.route('/register', methods=['POST'])
 def register():
     data = request.json
@@ -28,8 +29,8 @@ def register():
     email = data['email']
     password = data['password']
     
-    # Hash the password
-    hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
+    # Hash the password and decode to string before storing
+    hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
 
     try:
         query = "INSERT INTO users (username, email, password) VALUES (%s, %s, %s)"
@@ -38,8 +39,9 @@ def register():
         return jsonify({"message": "User registered successfully"}), 200
     except Exception as e:
         db.rollback()
-        return jsonify({"message": "Registration failed"}), 500
-    
+        return jsonify({"message": f"Registration failed: {str(e)}"}), 500
+
+
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -52,17 +54,13 @@ def login():
     result = cursor.fetchone()
     
     if result:
-        stored_password = result[0]
-        # Verify the password
+        stored_password = result[0]  # This is a string now
         if bcrypt.checkpw(password.encode('utf-8'), stored_password.encode('utf-8')):
             return jsonify({"message": "Login successful"}), 200
         else:
             return jsonify({"message": "Invalid credentials"}), 401
     else:
         return jsonify({"message": "Invalid credentials"}), 401
-
-
-
 
 
 
